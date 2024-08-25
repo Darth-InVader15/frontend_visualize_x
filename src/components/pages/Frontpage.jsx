@@ -9,7 +9,7 @@ import {
   Toolbar 
 } from '@mui/material';
 import { styled } from '@mui/system';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const GradientTypography = styled(Typography)`
 background: linear-gradient(45deg, #800080 30%, #FFC0CB 60%, #0000FF 90%);
@@ -45,6 +45,10 @@ const chartRoutes = [
 ];
 
 function FrontPage() {
+    const history = useNavigate();
+    const handleClick = (path) => {
+        history(`/${path}`);
+      };
   return (
     <>
       <AppBar position="static">
@@ -66,6 +70,7 @@ function FrontPage() {
             <Grid item xs={12} sm={6} md={4} lg={6} key={index}>
               <StyledButton
                 component={Link}
+                onClick={() => handleClick(route.path)}
                 to={route.path}
                 variant="contained"
                 fullWidth
