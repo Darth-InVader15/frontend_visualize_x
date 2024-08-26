@@ -20,7 +20,8 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-
+import zoomPlugin from 'chartjs-plugin-zoom';
+import 'hammerjs';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -28,7 +29,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  zoomPlugin
 );
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -40,7 +42,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 const periods = ['Daily', 'Monthly', 'Quarterly', 'Yearly'];
 
 const apiEndpoints = {
-  'Daily': 'http://localhost:5000/api/v1/sales/total-sales-monthly',
+  'Daily': 'http://localhost:5000/api/v1/sales/total-sales-daily',
   'Monthly': 'http://localhost:5000/api/v1/sales/total-sales-monthly',
   'Quarterly': 'http://localhost:5000/api/v1/sales/total-sales/0.25',
   'Yearly': 'http://localhost:5000/api/v1/sales/total-sales-year',
@@ -76,8 +78,23 @@ function SalesGrowth() {
       },
       title: {
         display: true,
-        text: `Total Sales - ${periods[activeIndex]}`,
+        text: `Total Sales - ${periods[activeIndex]} - scroll to zoom`,
       },
+        zoom: {
+            pan: {
+            enabled: true,
+            mode: 'x',
+            },
+            zoom: {
+            wheel: {
+                enabled: true,
+            },
+            pinch: {
+                enabled: true,
+            },
+            mode: 'x',
+            },
+        },
     },
   };
 
