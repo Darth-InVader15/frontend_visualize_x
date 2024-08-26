@@ -42,10 +42,10 @@ const StyledCard = styled(Card)(({ theme }) => ({
 const periods = ['Monthly', 'Quarterly', 'Yearly'];
 
 const apiEndpoints = {
-  'Daily': 'http://localhost:5000/api/v1/customer/repeat-customers/daily',
-  'Monthly': 'http://localhost:5000/api/v1/customer/repeat-customers/monthly',
-  'Quarterly': 'http://localhost:5000/api/v1/customer/repeat-customers/0.25',
-  'Yearly': 'http://localhost:5000/api/v1/customer/repeat-customers/yearly',
+  'Daily': 'https://visualizex-production.up.railway.app/api/v1/customer/repeat-customers/daily',
+  'Monthly': 'https://visualizex-production.up.railway.app/api/v1/customer/repeat-customers/monthly',
+  'Quarterly': 'https://visualizex-production.up.railway.app/api/v1/customer/repeat-customers/0.25',
+  'Yearly': 'https://visualizex-production.up.railway.app/api/v1/customer/repeat-customers/yearly',
 };
 
 function RepeatedCustomers() {

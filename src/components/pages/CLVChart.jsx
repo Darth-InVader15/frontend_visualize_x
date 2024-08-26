@@ -43,7 +43,7 @@ const CustomerLifetimeValueChart = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/v1/customer/lifetime-value');
+      const response = await fetch('https://visualizex-production.up.railway.app/api/v1/customer/lifetime-value');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

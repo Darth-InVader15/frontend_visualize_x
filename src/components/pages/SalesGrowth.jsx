@@ -42,10 +42,10 @@ const StyledCard = styled(Card)(({ theme }) => ({
 const periods = ['Daily', 'Monthly', 'Quarterly', 'Yearly'];
 
 const apiEndpoints = {
-  'Daily': 'http://localhost:5000/api/v1/sales/total-sales-daily',
-  'Monthly': 'http://localhost:5000/api/v1/sales/total-sales-monthly',
-  'Quarterly': 'http://localhost:5000/api/v1/sales/total-sales/0.25',
-  'Yearly': 'http://localhost:5000/api/v1/sales/total-sales-year',
+  'Daily': 'https://visualizex-production.up.railway.app/api/v1/sales/total-sales-daily',
+  'Monthly': 'https://visualizex-production.up.railway.app/api/v1/sales/total-sales-monthly',
+  'Quarterly': 'https://visualizex-production.up.railway.app/api/v1/sales/total-sales/0.25',
+  'Yearly': 'https://visualizex-production.up.railway.app/api/v1/sales/total-sales-year',
 };
 
 function SalesGrowth() {

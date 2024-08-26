@@ -12,11 +12,11 @@ const NewCustomers = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const monthlyResponse = await fetch('http://localhost:5000/api/v1/customer/new-customers/month');
+        const monthlyResponse = await fetch('https://visualizex-production.up.railway.app/api/v1/customer/new-customers/month');
         const monthlyResult = await monthlyResponse.json();
         setMonthlyData(monthlyResult);
 
-        const yearlyResponse = await fetch('http://localhost:5000/api/v1/customer/new-customers/year');
+        const yearlyResponse = await fetch('https://visualizex-production.up.railway.app/api/v1/customer/new-customers/year');
         const yearlyResult = await yearlyResponse.json();
         setYearlyData({
           labels: yearlyResult.map(item => item._id.year.toString()),

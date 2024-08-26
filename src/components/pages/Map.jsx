@@ -16,7 +16,7 @@ export default function Map() {
             setError(null);
 
             try {
-                const response = await fetch('http://localhost:5000/api/v1/customer/location');
+                const response = await fetch('https://visualizex-production.up.railway.app/api/v1/customer/location');
                 if (!response.ok) {
                     throw new Error(`Error fetching data: ${response.status}`);
                 }

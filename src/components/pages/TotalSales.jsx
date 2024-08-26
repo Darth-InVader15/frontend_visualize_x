@@ -42,8 +42,8 @@ const StyledCard = styled(Card)(({ theme }) => ({
 const periods = ['Monthly', 'Yearly'];
 
 const apiEndpoints = {
-  'Monthly': 'http://localhost:5000/api/v1/sales/growth-monthly',
-   'Yearly': 'http://localhost:5000/api/v1/sales/growth-yearly',
+  'Monthly': 'https://visualizex-production.up.railway.app/api/v1/sales/growth-monthly',
+   'Yearly': 'https://visualizex-production.up.railway.app/api/v1/sales/growth-yearly',
 };
 
 function TotalSales() {
