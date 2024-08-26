@@ -9,7 +9,7 @@ import {
   Toolbar 
 } from '@mui/material';
 import { styled } from '@mui/system';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const GradientTypography = styled(Typography)`
 background: linear-gradient(45deg, #800080 30%, #FFC0CB 60%, #0000FF 90%);
@@ -37,7 +37,7 @@ const StyledButton = styled(Button)`
 
 const chartRoutes = [
   { title: 'Total Sales Over Time', path: '/total-sales' },
-  { title: 'Sales Growth Rate', path: '/sales-growth' },
+  { title: 'Sales Growth Rate', path: '/growth' },
   { title: 'New Customers Added', path: '/new-customers' },
   { title: 'Repeat Customers', path: '/repeat-customers' },
   { title: 'Geographical Distribution', path: '/geo-distribution' },
@@ -45,9 +45,11 @@ const chartRoutes = [
 ];
 
 function FrontPage() {
-    const history = useNavigate();
-    const handleClick = (path) => {
-        history(`/${path}`);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleClick = (path) => (event) => {
+        event.preventDefault();
+        navigate(`${location.pathname}${path}`);
       };
   return (
     <>
@@ -62,7 +64,7 @@ function FrontPage() {
       <Box my={4} display="flex" flexDirection="column" alignItems="center" justifyContent="flex-start">
         <Box my={4}>
             <GradientTypography variant="h1" component="h1">
-                Data Visualization App
+               Visualize_X : Data Visualization App
             </GradientTypography>
         </Box>
         <Grid container spacing={3} mt={3}>
